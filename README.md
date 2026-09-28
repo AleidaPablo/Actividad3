@@ -65,7 +65,7 @@ modal.abrir({
   ],
   alConfirmar: () => {
     notificador.mostrar({
-      mensaje: '¡Selección guardada correctamente!',
+      mensaje: 'Gracias',
       tipo: 'exito',
       duracion: 3500
     });
@@ -80,4 +80,4 @@ modal.abrir({
 
 ## Video Demostrativo
 
-[Video de demostración](https://youtube.com).
+[Video de demostración](https://www.loom.com/share/118bccc9d9cb44c88192e7b2244c1225).
