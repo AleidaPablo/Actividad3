@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Librería Componentes</title>
+    <link rel="stylesheet" href="css/componente.css">
+</head>
+<body>
+
+    <div class="tarjeta-principal">
+        <h2>Librería de Componentes</h2>
+        <p>Componentes</p>
+        
+        <div class="grupo-botones">
+            <button class="boton-interactivo estilo-exito" id="botonExito">Éxito</button>
+            <button class="boton-interactivo estilo-error" id="botonError">Error</button>
+            <button class="boton-interactivo estilo-info" id="botonInfo">Información</button>
+            <button class="boton-interactivo estilo-modal" id="botonModal">Abrir Modal</button>
+        </div>
+    </div>
+
+    <script src="js/componente.js"></script>
+    <script>
+        document.getElementById('botonExito').addEventListener('click', () => {
+            notificador.mostrar({ mensaje: 'Tuvo Exito', tipo: 'exito' });
+        });
+
+        document.getElementById('botonError').addEventListener('click', () => {
+            notificador.mostrar({ mensaje: 'Error', tipo: 'error' });
+        });
+
+        document.getElementById('botonInfo').addEventListener('click', () => {
+            notificador.mostrar({ mensaje: 'Holi', tipo: 'info' });
+        });
+
+        document.getElementById('botonModal').addEventListener('click', () => {
+            modal.abrir({
+                titulo: 'Peliculas de Disney',
+                mensaje: '¿Conoces estas pelicula?',
+                imagenes: [
+                    'img/imagen1.jpg',
+                    'img/imagen2.jpg',
+                    'img/imagen3.jpg',
+                    'img/imagen4.jpg',
+                    'img/imagen5.jpg',
+                    'img/imagen6.jpg',
+                    'img/imagen7.png'
+                ],
+                alConfirmar: () => {
+                    notificador.mostrar({
+                        mensaje: 'Gracias',
+                        tipo: 'exito',
+                        duracion: 3500
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

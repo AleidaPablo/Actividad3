@@ -1,0 +1,234 @@
+:root {
+  --color-purpura: #f0d9ef;
+  --color-rosa: #fcdce1;
+  --color-amarillo: #ffe6bb;
+  --color-verde: #d0ecce;
+  --color-menta: #cde9dc;
+  --color-azul: #c4dfe5;
+  --fondo: #cdabf9;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px;
+  background-color: var(--fondo);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+.tarjeta-principal {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+.tarjeta-principal h2 {
+  color:#030303;
+  margin-top: 0;
+}
+.tarjeta-principal p {
+  color: #0e0d0d;
+  margin-bottom: 25px;
+}
+.grupo-botones {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.boton-interactivo {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  color:#030303;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.boton-interactivo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+.estilo-exito { 
+  background-color: var(--color-menta); 
+}
+.estilo-error { 
+  background-color: var(--color-rosa);
+ }
+.estilo-info  { 
+  background-color: var(--color-amarillo); 
+}
+.estilo-modal { 
+  background-color: var(--color-purpura); 
+}
+.contenedor-avisos {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+.aviso {
+  min-width: 280px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  color:#030303;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: entradaSuave 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.aviso.aviso-exito { 
+  background-color: var(--color-menta); 
+}
+.aviso.aviso-error { 
+  background-color: var(--color-rosa); 
+}
+.aviso.aviso-info  { 
+  background-color: var(--color-amarillo); 
+}
+.aviso .boton-cerrar-aviso {
+  background: none;
+  border: none;
+  color: #0e0d0d;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 12px;
+  opacity: 0.7;
+}
+.aviso .boton-cerrar-aviso:hover { opacity: 1; }
+@keyframes entradaSuave {
+  from { transform: translateX(120%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+.aviso-oculto {
+  opacity: 0;
+  transform: translateX(120%);
+}
+.fondo-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(74, 74, 74, 0.35);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.fondo-modal.visible {
+  opacity: 1;
+  visibility: visible;
+}
+.caja-modal {
+  background: #fdf4f7;
+  padding: 28px;
+  border-radius: 20px;
+  max-width: 460px;
+  width: 88%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+.fondo-modal.visible .caja-modal {
+  transform: scale(1);
+}
+.titulo-modal {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 12px;
+}
+.mensaje-modal {
+  font-size: 14px;
+  color: #080808;
+  margin-bottom: 20px;
+}
+.acciones-modal {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.boton-confirmar-modal { 
+  background-color:#b9eede; 
+}
+.boton-cancelar-modal  { 
+  background-color:#fcc6e2; 
+}
+.contenedor-carrusel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0;
+}
+.imagen-carrusel {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.flecha-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color:#000;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(229, 56, 56, 0.15);
+}
+.flecha-carrusel:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+.flecha-carrusel.anterior { 
+  left: 20px; 
+}
+.flecha-carrusel.siguiente { 
+  right: 10px; 
+}
+.indicadores-carrusel {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+.punto-indicador {
+  width: 8px;
+  height: 8px;
+  background-color:#c79efd;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.punto-indicador.activo {
+  background-color: var(--color-purpura);
+  transform: scale(1.3);
+}
