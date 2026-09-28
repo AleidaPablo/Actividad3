@@ -30,28 +30,16 @@ Puedes llamar al notificador con distintos parámetros:
 
 ### 1. Mensaje de Éxito
 ```javascript
-notificador.mostrar({
-  mensaje: 'Operación realizada con éxito',
-  tipo: 'exito',
-  duracion: 3000
-});
+ notificador.mostrar({ mensaje: 'Tuvo Exito', tipo: 'exito' });
 ```
 
 ### 2. Mensaje de Error
 ```javascript
-notificador.mostrar({
-  mensaje: 'Ocurrió un error  al procesar los datos.',
-  tipo: 'error',
-  duracion: 4000
-});
+notificador.mostrar({ mensaje: 'Error', tipo: 'error' });
 ```
 ### 3. Mensaje de Información
 ```javascript
-notificador.mostrar({ 
-  mensaje: 'Nueva actualización disponible.', 
-  tipo: 'info',
-  duracion: 3000 
-});
+notificador.mostrar({ mensaje: 'Holi', tipo: 'info' });
 ```
 
 ---
